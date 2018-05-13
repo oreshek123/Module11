@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using GeneratorName;
 
 namespace Module10
@@ -65,10 +66,14 @@ namespace Module10
                 }
             }
 
-            Console.WriteLine($"{vacancie.ToString()} зарплата которых больше средней зарплаты {summSalary} всех {countClercs} клерков ");
-            list = list.OrderBy(o => o.FullName).ToList();
-            PrintInfo(list);
-            
+            if (list.Count != null)
+            {
+                Console.WriteLine($"{vacancie.ToString()} зарплата которых больше средней зарплаты {summSalary} всех {countClercs} клерков\n ");
+                list = list.OrderBy(o => o.FullName).ToList();
+                PrintInfo(list);
+            }
+            else Console.WriteLine("Нет таких сотрудников, чья зарплата больше средней зарплаты {summSalary} всех {countClercs} клерков\n");
+
         }
 
         public void Report2()
@@ -91,7 +96,7 @@ namespace Module10
                 }
             }
 
-            Console.WriteLine($"Информация обо всех сотрудниках, принятиых на работу позже босса - {boss.FullName} ({boss.StartDate})");
+            Console.WriteLine($"Информация обо всех сотрудниках, принятиых на работу позже босса - {boss.FullName} ({boss.StartDate})\n");
             PrintInfo(list);
         }
     }

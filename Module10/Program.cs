@@ -12,6 +12,7 @@ namespace Module10
         {
             Service service = new Service();
             service.GenerateEmployee();
+            Console.WriteLine("Информация обо всех сотрудниках");
             service.PrintInfo(service.employeeses);
 
             Console.WriteLine("\n\n\n");
